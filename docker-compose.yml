@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  app:
+    image: node:22-alpine
+    working_dir: /app
+    user: node
+    volumes:
+      - ./app:/app:ro
+    command: ["node", "server.js"]
+    environment:
+      DB_HOST: db
+      DB_USER: club_user
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: esport_club
+    ports:
+      - "8082:3000"
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

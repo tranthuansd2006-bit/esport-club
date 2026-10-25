@@ -1,3 +1,4 @@
+const observeRequest = require('./metrics');
 const handleMeetings = require('./meetings');
 const handleContributions = require('./contributions');
 const handleParticipants = require('./participants');
@@ -90,6 +91,7 @@ function sendHtml(res, status, body) {
 }
 
 http.createServer(async (req, res) => {
+  observeRequest(req, res);
   const path = req.url.split('?')[0];
   console.log(req.method, path);
 

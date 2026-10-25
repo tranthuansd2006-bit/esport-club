@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mysql2": "^3.24.6"
+    "mysql2": "^3.24.6",
+    "prom-client": "15.1.3"
   }
 }

@@ -11,3 +11,11 @@ node_modules/
 *.sql.gz
 *.before-*.js
 *.before-*.yml
+
+# Cau truc database duoc phep dua len Git
+!database/schema.sql
+
+# Ban sao luu cuc bo
+backups/
+*.bak
+*.before-*.json
